@@ -1,0 +1,43 @@
+@import "../variables";
+
+.defaultLayout {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: auto;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.layoutBody {
+    width: 500px;
+    max-width: 100%;
+    padding: 40px;
+    box-sizing: border-box;
+}
+
+.ghostFooter {
+    height: 150px;
+}
+
+.formHeader {
+    font-size: $header-font-size-2;
+    margin-bottom: 16px;
+}
+
+.alert {
+    border: $color-primary 1px solid;
+    border-radius: $border-radius;
+    padding: 4px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid $color-primary;
+    padding: 8px;
+    box-sizing: border-box;
+    width: 100%;
+}

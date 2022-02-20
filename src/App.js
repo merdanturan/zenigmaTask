@@ -1,24 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
+import './assets/scss/global.scss';
+
+import CreatePost from './components/common/CreatePost';
+import Post from './components/common/Post';
+import DefaultLayout from './layout/DefaultLayout';
+
 
 function App() {
+  //States
+  const { user } = useSelector(state => state.auth)
+  const [auth, setAuth] = useState(false);
+
+  ///Check logged in
+  useEffect(() => {
+    if (user) {
+      setAuth(true)
+    }
+  }, [user]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <DefaultLayout>
+        {auth &&
+          <CreatePost />
+        }
+        <Post />
+      </DefaultLayout>
+    </>
   );
 }
 
