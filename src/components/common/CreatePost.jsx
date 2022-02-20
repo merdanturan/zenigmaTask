@@ -36,8 +36,8 @@ const CreatePost = () => {
             <form onSubmit={handleSubmit}>
                 <div className='formHeader'>Create a post!</div>
                 {error && <div className='alert'>{error}</div>}
-                <Input value={header} onChange={v => setHeader(v)} placeholder={"Post Header"} />
-                <Input value={content} onChange={v => setContent(v)} placeholder={"Post Content"} area />
+                <Input value={header} onChange={v => setHeader(v)} placeholder={"Post Header"} required/>
+                <Input value={content} onChange={v => setContent(v)} placeholder={"Post Content"} required area />
                 <Button submit full>Create!</Button>
             </form>
         </div>
